@@ -4,13 +4,41 @@ import fetch from 'node-fetch'
 import {loadFirebase} from '../lib/db.js'
 import { database } from 'firebase'
 
+
 function Index({ result }) {
   return (
     <div>
-        <h2>A brief future</h2>
-        <p>Lorem ipsum</p>
-  <p>You are {result.world.value} {result.premise.value} and you have to {result.action.value} for {result.object.value} {result.need.value}</p>
-  <p>{result.world.id}-{result.premise.id}-{result.action.id}-{result.object.id}-{result.need.id}</p>
+        
+        <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
+  
+        
+        <div className="card">
+          <p>
+            <small>{result.world.id}-{result.premise.id}-{result.action.id}-{result.object.id}-{result.need.id}</small>
+          </p>
+          <div className="brief">
+            <p>
+              <span className="highlight">You are </span><br/>
+              {result.world.value} {result.premise.value}
+            </p>
+            <p>
+              <span className="highlight">and you have to </span><br/> 
+              {result.action.value} for {result.object.value} {result.need.value}
+            </p>
+          </div>
+          
+        </div>
+        <img src="/drip.svg" alt="drip" className="drip" />
+
+        <button onClick="window.location.reload()" className="btn" type="button" value="alternate">Alternate</button>
+        <footer>
+        <p>
+          A tool by <br/> <a href='https://www.alterneering.com' target='_blank'>alterneering studios</a>
+        </p>
+        <img src="/alterneering-logo.svg" alt="Alterneering studios logo" />
+        </footer>
+
+  
     </div>
   )
 

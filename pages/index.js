@@ -7,15 +7,12 @@ import { database } from 'firebase'
 
 function Index({ result }) {
   return (
-    <div>
+    <div className="container">
         
         <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
   
         
         <div className="card">
-          <p>
-            <small>{result.world.id}-{result.premise.id}-{result.action.id}-{result.object.id}-{result.need.id}</small>
-          </p>
           <div className="brief">
             <p>
               <span className="highlight">You are </span><br/>
@@ -26,7 +23,9 @@ function Index({ result }) {
               {result.action.value} for {result.object.value} {result.need.value}
             </p>
           </div>
-          
+          <div className="brief-id">
+            <small>{result.world.id}-{result.premise.id}-{result.action.id}-{result.object.id}-{result.need.id}</small>
+          </div>
         </div>
         <img src="/drip.svg" alt="drip" className="drip" />
 

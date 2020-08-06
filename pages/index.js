@@ -6,6 +6,10 @@ import { database } from 'firebase'
 
 
 function Index({ result }) {
+  var reload = () => { 
+    window.location.reload()
+  }
+
   return (
     <div className="container">
         
@@ -29,7 +33,7 @@ function Index({ result }) {
         </div>
         <img src="/drip.svg" alt="drip" className="drip" />
 
-        <button onClick="window.location.reload()" className="btn" type="button" value="alternate">Alternate</button>
+        <button onClick={() => reload()} className="btn" type="button" value="alternate">Alternate</button>
         <footer>
         <p>
           A tool by <br/> <a href='https://www.alterneering.com' target='_blank'>alterneering studios</a>

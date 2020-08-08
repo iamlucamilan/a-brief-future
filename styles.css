@@ -113,3 +113,37 @@ footer a {
 footer img {
   width: 80px;
 }
+
+.example {
+  background-color: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+
+.about-link {
+  color: #FFFFFF;
+  font-size: 32px;
+  text-decoration: none;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.container.about {
+  padding-top: 40px;
+}
+
+.container.about p {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 130%;
+  text-align: left;
+}
+
+.container.about a {
+  text-decoration: underline;
+  color: white;
+}

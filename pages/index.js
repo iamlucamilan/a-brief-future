@@ -3,6 +3,8 @@ import Link from 'next/link'
 import fetch from 'node-fetch'
 import {loadFirebase} from '../lib/db.js'
 import { database } from 'firebase'
+import { motion } from "framer-motion"
+
 
 
 function Index({ result }) {
@@ -10,12 +12,29 @@ function Index({ result }) {
     window.location.reload()
   }
 
+const MyComponent = () => (
+  <motion.div
+    animate={{
+      scale: [1, 2, 2, 1, 1],
+      rotate: [0, 0, 270, 270, 0],
+      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+    }} className = "example"
+  />
+)
+
   return (
     <div className="container">
+        {/* <MyComponent /> */}
+
+        <Link href="/about"><a className="about-link">☉</a></Link>
         
         <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
-  
+
         
+        
+        
+  
+
         <div className="card">
           <div className="brief">
             <p>

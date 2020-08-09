@@ -26,7 +26,13 @@ const MyComponent = () => (
     <div className="container">
         {/* <MyComponent /> */}
 
-        <Link href="/about"><a className="about-link">☉</a></Link>
+        <div class="sun">
+          <Link href="/about">
+            <a>
+              <img src="/sun.svg" className="about-link" alt="About page" />
+            </a>
+          </Link>
+        </div>
         
         <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
 

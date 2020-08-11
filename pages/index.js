@@ -37,17 +37,12 @@ const MyComponent = () => (
         <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
 
         
-        
-        
-  
 
         <div className="card">
           <div className="brief">
             <p>
               <span className="highlight">You are </span><br/>
-              {result.world.value} {result.premise.value}
-            </p>
-            <p>
+              {result.world.value} {result.premise.value}<br/><br/>
               <span className="highlight">and you have to </span><br/> 
               {result.action.value} for {result.object.value} {result.need.value}
             </p>

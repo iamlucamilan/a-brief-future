@@ -33,7 +33,7 @@ body {
 
 .logo {
   width: 124px;
-  margin: 60px auto -2px auto;
+  margin: 48px auto -2px auto;
   display: flex;
 }
 
@@ -132,6 +132,8 @@ footer img {
 
 
 
+
+
 .sun {
 	border-radius: 50%;
 	margin: 10px;
@@ -139,7 +141,7 @@ footer img {
   width: 20px;
   position: absolute;
   right: 40px;
-  top: 40px;
+  top: 38px;
 	box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
 	animation: pulse 2s infinite;
 }
@@ -159,4 +161,12 @@ footer img {
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 	}
+}
+
+@media only screen and (max-width: 375px) {
+  .sun {
+    position: absolute;
+    right: 20px;
+    top: 38px;
+  }
 }

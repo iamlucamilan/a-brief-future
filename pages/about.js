@@ -1,19 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from "framer-motion"
 
 
 function About({  }) {
 
 
   return (
-    <div className="container about">
+    <motion.div className="container about"
+      initial={{
+        opacity: 0,
+        y: 0
+      }}
+      animate={{
+        opacity: 1,
+        y: 0
+      }}
+      transition={{ ease: "easeIn", duration: .5 }}
+    >
         
-        {/* <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" /> */}
-
-        <Link href="/">
-          <a>↩︎ Back </a>
-        </Link>
-
         <p>
           Heyhowyoudoing?
         </p>
@@ -26,7 +31,10 @@ function About({  }) {
         <p>
           Have a nice day and keep doubting. <br/>Enjoy the sun! ☉
         </p>
-    </div>
+        <Link href="/">
+          <a>↩︎ Back </a>
+        </Link>
+    </motion.div>
   )
 }
 export default About

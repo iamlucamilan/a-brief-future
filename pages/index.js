@@ -38,22 +38,51 @@ const MyComponent = () => (
 
         
 
-        <div className="card">
-          <div className="brief">
-            <p>
+        <motion.div className="card"
+        initial={{
+            opacity: 0.5,
+            y: 0
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{ ease: "easeIn", duration: .2 }}>
+          <motion.div className="brief"
+            initial={{
+              opacity: 0,
+              y: -15
+            }}
+            animate={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{ ease: "easeIn", duration: 0.45 }}
+          >
+            <p> 
               <span className="highlight">You are </span><br/>
               {result.world.value} {result.premise.value}<br/><br/>
               <span className="highlight">and you have to </span><br/> 
               {result.action.value} for {result.object.value} {result.need.value}
             </p>
-          </div>
-          <div className="brief-id">
+          </motion.div>
+          <motion.div className="brief-id"
+          initial={{
+            opacity: 0,
+            y: 0
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{ ease: "easeIn", duration: 0.45 }}
+          >
             <small>{result.world.id}-{result.premise.id}-{result.action.id}-{result.object.id}-{result.need.id}</small>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <img src="/drip.svg" alt="drip" className="drip" />
 
-        <button onClick={() => reload()} className="btn" type="button" value="alternate">Alternate</button>
+        <motion.button onClick={() => reload()} className="btn" type="button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }} value="alternate">Alternate</motion.button>
         <footer>
         <p>
           A tool by <br/> <a href='https://www.alterneering.com' target='_blank'>alterneering studios</a>

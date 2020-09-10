@@ -61,9 +61,9 @@ const MyComponent = () => (
           >
             <p> 
               <span className="highlight">You are </span><br/>
-              {result.world.value} {result.premise.value}<br/><br/>
+              <span className="sa"> {result.world.value} </span> <span className="dotted">{result.premise.value}</span><br/><br/>
               <span className="highlight">and you have to </span><br/> 
-              {result.action.value} for {result.object.value} {result.need.value}
+              <span className="sasa">{result.action.value}</span> for <span className="dotted">{result.object.value} {result.need.value}</span>
             </p>
           </motion.div>
           <motion.div className="brief-id"
@@ -87,7 +87,10 @@ const MyComponent = () => (
         <p>
           A tool by <br/> <a href='https://www.alterneering.com' target='_blank'>alterneering studios</a>
         </p>
-        <img src="/alterneering-logo.svg" alt="Alterneering studios logo" />
+        <a href='https://www.alterneering.com' target='_blank'>
+          <img src="/alterneering-logo.svg" alt="Alterneering studios logo" />
+        </a>
+        
         </footer>
 
   

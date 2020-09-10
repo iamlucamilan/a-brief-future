@@ -69,7 +69,7 @@ body {
 }
 
 .dotted {
-  background-image: url("../a-brief-future/public/h.svg");
+  background-image: url("/h.svg");
   background-size: auto 3px;
   background-repeat: repeat-x;
   background-position: 100% 101%;

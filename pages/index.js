@@ -12,21 +12,32 @@ function Index({ result }) {
     window.location.reload()
   }
 
-const MyComponent = () => (
-  <motion.div
-    animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }} className = "example"
-  />
-)
+
 
   return (
-    <div className="container">
-        {/* <MyComponent /> */}
-
-        <div class="sun">
+    <div>
+      <Head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="author" content="Alterneering Studios"/>
+        <meta name="description" content="A Brief Future is a pratical tool to create ideas in alternative realities. Let this tool drop you into a future scenario where you, your team, friends and pets can explore new ideas and designs." />
+        <meta name="keywords" content="Futures thinking, beyond design thinking, design thinking, critical design, design criticism, criticism, design fiction, social dreaming, speculative everything, futurologist, futurology, future probes, workshop, design for debate, radical design, imaginary futures, utopia, real utopias, dystopia, futurescaping, dark design, what if, fictional world, innovation, micro-utopia,  mixed reality, sci art, art and science, concept design, systems thinking, social design, experimental design, product design, object design, UX design, concept art, tool, digital tool, cards,  challenge, design challenge, workshop, facilitation, group thinking, future vision, artifact" />
+        <meta name="robots" content="noodp" />
+        <title>A Brief Future</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />
+        <link rel="manifest" href="/site.webmanifest"/>
+        <meta property="og:title" content="A Brief Future" />
+        <meta property="og:description" content="A Brief Future is a pratical tool to create ideas in alternative realities. Let this tool drop you into a future scenario where you, your team, friends and pets can explore new ideas and designs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="abrieffuture.xyz" />
+        <meta property="og:image" content="/opengraph.png" />
+        <meta property="og:locale" content="en-gb" />
+        <meta property="og:site_name" content="A brief future" />
+      </Head>
+      <div className="container">
+        <div className="sun">
           <Link href="/about">
             <a>
               <img src="/sun.svg" className="about-link" alt="About page" />
@@ -35,8 +46,6 @@ const MyComponent = () => (
         </div>
         
         <img src="/a-brief-future-logo.svg" alt="A brief future logo" className="logo" />
-
-        
 
         <motion.div className="card"
         initial={{
@@ -82,18 +91,19 @@ const MyComponent = () => (
         </motion.div>
         <img src="/drip.svg" alt="drip" className="drip" />
 
-        <motion.button onClick={() => reload()} className="btn" type="button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }} value="alternate">Alternate</motion.button>
+        <motion.button onClick={() => reload()} className="btn" type="button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }} value="alternate">{result.cta}</motion.button>
         <footer>
         <p>
-          A tool by <br/> <a href='https://www.alterneering.com' target='_blank'>alterneering studios</a>
+          A tool by <br/> <a href='https://alterneering.com' target='_blank'>alterneering studios</a>
         </p>
-        <a href='https://www.alterneering.com' target='_blank'>
+        <a href='https://alterneering.com' target='_blank'>
           <img src="/alterneering-logo.svg" alt="Alterneering studios logo" />
         </a>
         
         </footer>
 
   
+    </div>
     </div>
   )
 
@@ -105,6 +115,8 @@ export async function getServerSideProps() {
   let db = firebase.firestore()
   var result = {}
   var maximum_ranges = {}
+
+  
   
   /**
    * ACTIONS
@@ -137,7 +149,7 @@ export async function getServerSideProps() {
   let action = await actionsRef.where('id', '==', action_id).get() 
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         result.action = doc.data()
       });
     })
@@ -176,7 +188,7 @@ export async function getServerSideProps() {
   let object = await objectRef.where('id', '==', object_id).get() 
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         result.object = doc.data()
       });
     })
@@ -215,7 +227,7 @@ export async function getServerSideProps() {
   let need = await needRef.where('id', '==', need_id).get() 
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         result.need = doc.data()
       });
     })
@@ -254,7 +266,7 @@ export async function getServerSideProps() {
   let world = await worldRef.where('id', '==', world_id).get() 
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         result.world = doc.data()
       });
     })
@@ -293,7 +305,7 @@ export async function getServerSideProps() {
   let premise = await premiseRef.where('id', '==', premise_id).get() 
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         result.premise = doc.data()
       });
     })
@@ -301,10 +313,40 @@ export async function getServerSideProps() {
       console.log('Error getting documents', err);
     });
 
+    /***
+   * Random CTAs
+   */
 
+  let ctas = [
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Click to alternate', 
+  'Alternate another one', 
+  'Alternate a new scenario',
+  'Create a new future',
+  'Alternate a new future',
+  'Bring me to another dimension', 
+  'Am I in the correct universe?', 
+  'Go back to the future',
+  'Another future is waiting you',
+  'Try again',
+  'Check the next version of you',
+  'New future new you',
+  ];
+  
+  let cta_id = Math.floor((Math.random() * ctas.length));
+  result.cta = ctas[cta_id];
 
-
-  console.log(result)
+  //console.log(result)
 
   // Pass data to the page via props
   return { props: { result } }

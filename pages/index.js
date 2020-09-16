@@ -23,7 +23,7 @@ function Index({ result }) {
         <meta name="description" content="A Brief Future is a pratical tool to create ideas in alternative realities. Let this tool drop you into a future scenario where you, your team, friends and pets can explore new ideas and designs." />
         <meta name="keywords" content="Futures thinking, beyond design thinking, design thinking, critical design, design criticism, criticism, design fiction, social dreaming, speculative everything, futurologist, futurology, future probes, workshop, design for debate, radical design, imaginary futures, utopia, real utopias, dystopia, futurescaping, dark design, what if, fictional world, innovation, micro-utopia,  mixed reality, sci art, art and science, concept design, systems thinking, social design, experimental design, product design, object design, UX design, concept art, tool, digital tool, cards,  challenge, design challenge, workshop, facilitation, group thinking, future vision, artifact" />
         <meta name="robots" content="noodp" />
-        <title>A Brief Future</title>
+        <title>A Brief Future – Create ideas in alternative realities</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />

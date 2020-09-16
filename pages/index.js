@@ -36,7 +36,16 @@ function Index({ result }) {
         <meta property="og:locale" content="en-gb" />
         <meta property="og:site_name" content="A brief future" />
       </Head>
-      <div className="container">
+      <motion.div className="container"
+      initial={{
+        opacity: 0.5,
+        y: 0
+      }}
+      animate={{
+        opacity: 1,
+        y: 0
+      }}
+      transition={{ ease: "easeIn", duration: .2 }}>
         <div className="sun">
           <Link href="/about">
             <a>
@@ -103,7 +112,7 @@ function Index({ result }) {
         </footer>
 
   
-    </div>
+    </motion.div>
     </div>
   )
 
